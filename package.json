@@ -1,0 +1,53 @@
+{
+  "name": "flickr-photo-feed",
+  "version": "0.0.1",
+  "description": "Consuming Flickr photo feed using different kinds of front-end technologies",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon --exec 'node -r dotenv/config' ./server/index.js",
+    "lint:server": "eslint ./server --fix",
+    "lint:react": "eslint ./react --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakubzet/flickr-photo-feed.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "react",
+    "redux",
+    "angular"
+  ],
+  "author": "jakubzet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakubzet/flickr-photo-feed/issues"
+  },
+  "homepage": "https://github.com/jakubzet/flickr-photo-feed#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.0",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "express": "^4.17.1",
+    "husky": "^3.1.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.1"
+  },
+  "engines": {
+    "node": ">=8.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:server && npm run lint:react",
+      "pre-push": "npm run test"
+    }
+  }
+}
