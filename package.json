@@ -6,8 +6,12 @@
   "scripts": {
     "server": "nodemon --exec 'node -r dotenv/config' ./server/index.js",
     "lint:server": "eslint ./server --fix",
+    "lint:scripts": "eslint ./scripts --fix",
     "lint:react": "eslint ./react --fix",
-    "test": "jest ."
+    "generate:react-component": "node -r dotenv/config ./scripts/generateReactComponent/generateReactComponent.js",
+    "test": "jest .",
+    "test:watch": "jest . --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -27,6 +31,11 @@
   },
   "homepage": "https://github.com/jakubzet/flickr-photo-feed#readme",
   "dependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.7.4",
+    "@babel/plugin-transform-react-display-name": "^7.7.4",
+    "@babel/plugin-transform-runtime": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "@babel/runtime": "^7.7.4",
     "dotenv": "^8.2.0",
     "react": "^16.12.0"
   },
@@ -38,10 +47,15 @@
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "fs-extra": "^8.1.0",
     "husky": "^3.1.0",
+    "inquirer": "^7.0.0",
     "jest": "^24.9.0",
     "morgan": "^1.9.1",
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.1",
+    "path": "^0.12.7",
+    "supertest": "^4.0.2"
   },
   "engines": {
     "node": ">=8.10.0"
