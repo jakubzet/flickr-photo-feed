@@ -1,14 +1,15 @@
 /* global ENV_PROD_NAME */
-const generateReactComponent = require("./generateReactComponent");
+const reactComponentGenerator = require("./generateReactComponent");
+
 const {
   textStartsWithCapitalLetter,
   textHasProperLength
-} = generateReactComponent;
+} = reactComponentGenerator;
 
 describe("initialize", () => {
-  it("Throws during initialization when not in development mode", () => {
+  it("Throw during initialization when not in development mode", () => {
     expect(() => {
-      generateReactComponent(ENV_PROD_NAME);
+      require("./index")(ENV_PROD_NAME);
     }).toThrow();
   });
 });

@@ -13,7 +13,7 @@ function handleListen(err) {
   console.log(`> Successfully running server on localhost:${PORT}`);
 }
 
-function initializeServer(mode = ENV) {
+function initServerListener(mode = ENV) {
   if (mode !== "development") {
     throw new Error("> Server is only available in development mode");
   }
@@ -33,5 +33,5 @@ function initializeServer(mode = ENV) {
 
 module.exports = {
   handleListen,
-  initializeServer
+  initServerListener
 };

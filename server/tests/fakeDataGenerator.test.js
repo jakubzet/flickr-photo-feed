@@ -21,6 +21,14 @@ describe("createFakeResponseData", () => {
     expect(items).not.toHaveLength(0);
   });
 
+  it("Replace invalid itemsLength param with default value", () => {
+    const resDataWithInvalidParam = createFakeResponseData(
+      "Im definitiely not a number"
+    );
+
+    expect(resDataWithInvalidParam.items).toHaveLength(2);
+  });
+
   it("Generates sample response data items", () => {
     const resData = createFakeResponseData();
     const firstItem = resData?.items[0] || {};

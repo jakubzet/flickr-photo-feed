@@ -30,10 +30,52 @@ function directoryDoesNotExistYet(name) {
   });
 }
 
+async function addComponentExport(name) {
+  const dirPath = path.resolve(componentsDirectoryPath, "index.js");
+  const indexFileBuffer = await fs.readFile(dirPath);
+  let indexFileContent = indexFileBuffer.toString().trim();
+
+  indexFileContent += `\nexport { default as ${name} } from "./${name}";\n`;
+
+  await fs.writeFile(dirPath, indexFileContent);
+
+  console.log(
+    `Component ${name} export has been successully added into components' index file`
+  );
+}
+
+async function generateComponentDirAndFiles(config) {
+  const { name } = config;
+  const dirPath = path.resolve(componentsDirectoryPath, name);
+  const { componentTpl, testTpl, storiesTpl, indexTpl } = templates;
+
+  await fs.mkdir(dirPath);
+
+  await fs.writeFile(
+    path.resolve(dirPath, `${name}.js`),
+    componentTpl.create(name)
+  );
+
+  await fs.writeFile(
+    path.resolve(dirPath, `${name}.test.js`),
+    testTpl.create(name)
+  );
+
+  await fs.writeFile(
+    path.resolve(dirPath, `${name}.stories.mdx`),
+    storiesTpl.create(name)
+  );
+
+  await fs.writeFile(path.resolve(dirPath, "index.js"), indexTpl.create(name));
+
+  console.log(`Component ${name} has been successully created`);
+
+  addComponentExport(name);
+}
+
 async function validateComponentName(input) {
   const hasValidName =
     textHasProperLength(input) && textStartsWithCapitalLetter(input);
-
   const dirExist = await directoryDoesNotExistYet(input);
 
   if (!hasValidName) {
@@ -66,37 +108,19 @@ async function promptQuestions() {
   return results;
 }
 
-async function generateComponentDirAndFiles(config) {
-  const { name } = config;
-  const dirPath = path.resolve(componentsDirectoryPath, name);
-
-  await fs.mkdir(dirPath);
-
-  const componentFileContent = templates.component.create(name);
-
-  await fs.writeFile(path.resolve(dirPath, `${name}.js`), componentFileContent);
-
-  console.log(`Component ${name} has been successully created`);
-}
-
 async function initializeGenerator(mode = ENV) {
-  try {
-    if (mode !== "development") {
-      throw new Error("> Generator is only available in development mode");
-    }
-
-    const userAnswers = await promptQuestions();
-
-    generateComponentDirAndFiles(userAnswers);
-  } catch (e) {
-    console.error(e);
+  if (mode !== "development") {
+    throw new Error("> Generator is only available in development mode");
   }
+
+  const userAnswers = await promptQuestions();
+
+  generateComponentDirAndFiles(userAnswers);
 }
 
 module.exports = {
   textStartsWithCapitalLetter,
   textHasProperLength,
-  directoryDoesNotExistYet
+  directoryDoesNotExistYet,
+  initializeGenerator
 };
-
-module.exports.default = initializeGenerator();

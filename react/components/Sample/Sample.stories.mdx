@@ -1,0 +1,20 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks";
+import Sample from "./Sample";
+
+<Meta
+  title="Components|Sample"
+  component={Sample}
+  parameters={{ jest: ["Sample"] }}
+/>
+
+# Sample
+
+Sample description placeholder.
+
+<Preview>
+  <Story name="default">
+    <Sample />
+  </Story>
+</Preview>
+
+<Props of={Sample} />

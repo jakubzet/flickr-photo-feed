@@ -1,7 +1,7 @@
 /* global ENV_DEV_NAME, ENV_PROD_NAME */
 const request = require("supertest");
 const server = require("../server");
-const { handleListen, initializeServer } = server;
+const { handleListen, initServerListener } = server;
 
 describe("handleListen", () => {
   it("Throws when listener receives error argument", () => {
@@ -13,34 +13,45 @@ describe("handleListen", () => {
   });
 });
 
-describe("initializeServer", () => {
+describe("initServerListener", () => {
+  it("Has server methods", () => {
+    const serverListener = initServerListener(ENV_DEV_NAME);
+
+    expect(serverListener).toHaveProperty("listen");
+    expect(serverListener).toHaveProperty("close");
+    expect(serverListener).toHaveProperty("timeout");
+    expect(serverListener.listening).toBe(true);
+
+    serverListener.close();
+  });
+
   it("Throws when not in development mode", () => {
     expect(() => {
-      initializeServer(ENV_PROD_NAME);
+      initServerListener(ENV_PROD_NAME);
     }).toThrow();
   });
 
   it("Does not throw when in development mode", () => {
     expect(() => {
-      const serverInstance = initializeServer(ENV_DEV_NAME);
-      serverInstance.close();
+      const serverListener = initServerListener(ENV_DEV_NAME);
+      serverListener.close();
     }).not.toThrow();
   });
 });
 
 describe("API endpoints", () => {
-  let serverInstance;
+  let serverListener;
 
   beforeEach(() => {
-    serverInstance = initializeServer(ENV_DEV_NAME);
+    serverListener = initServerListener(ENV_DEV_NAME);
   });
 
   afterEach(() => {
-    serverInstance.close();
+    serverListener.close();
   });
 
   it("GET /api", async () => {
-    const res = await request(serverInstance).get("/api");
+    const res = await request(serverListener).get("/api");
     expect(res.statusCode).toEqual(200);
   });
 });
