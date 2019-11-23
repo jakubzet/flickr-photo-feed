@@ -6,5 +6,6 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "extends": ["eslint:recommended"]
+  "extends": ["eslint:recommended", "plugin:jest/recommended"],
+  "plugins": ["jest"]
 }

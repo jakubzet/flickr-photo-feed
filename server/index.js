@@ -4,7 +4,15 @@ const morgan = require("morgan");
 const PORT = process.env.PORT || 8080;
 const DEV_ENV_ENABLED = process.env.NODE_ENV !== "production";
 
-async function initialize() {
+function handleListen(err) {
+  if (err) {
+    console.error("> Error connecting server:", err);
+  }
+
+  console.log(`> Successfully running server on localhost:${PORT}`);
+}
+
+function initializeServer() {
   const server = express();
   const router = express.Router();
 
@@ -15,16 +23,11 @@ async function initialize() {
   server.use(morgan("tiny"));
   server.use(router);
 
-  try {
-    await server.listen(PORT);
-    console.log(`> Successfully running server on localhost:${PORT}`);
-  } catch (e) {
-    console.error("> Error connecting server:", e);
-  }
+  server.listen(PORT, handleListen);
 }
 
 if (DEV_ENV_ENABLED) {
-  initialize();
+  initializeServer();
 } else {
   console.error("> Server only available in development mode");
 }
