@@ -1,8 +1,9 @@
 import * as types from "./types";
+import actions from "./actions";
 import { ofType } from "redux-observable";
 import { apiService } from "../../services";
 import { from } from "rxjs";
-import { mergeMap, map, catchError } from "rxjs/operators";
+import { switchMap, map, catchError } from "rxjs/operators";
 
 const entriesEpic = action$ =>
   action$.pipe(
@@ -10,15 +11,10 @@ const entriesEpic = action$ =>
     // mapTo({
     //   type: types.ENTRIES_REQUESTED_PENDING
     // }),
-    mergeMap(() =>
+    switchMap(() =>
       from(apiService.get()).pipe(
-        map(res => ({ type: types.ENTRIES_REQUESTED_FULFILLED, payload: res })),
-        catchError(err =>
-          Promise.resolve({
-            type: types.ENTRIES_REQUESTED_REJECTED,
-            message: err.message
-          })
-        )
+        map(res => actions.writeEntries(res)),
+        catchError(err => actions.errorEntries(err.message))
       )
     )
   );

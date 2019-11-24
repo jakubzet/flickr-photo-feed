@@ -46,7 +46,7 @@ export const EntriesCategoryInfo = ({
 
           <div className="EntriesCategoryInfo__secondary">
             <div className="EntriesCategoryInfo__date">
-              {prettifyDate(date).toString()}
+              Modified: {prettifyDate(date).toString()}
             </div>
           </div>
         </div>

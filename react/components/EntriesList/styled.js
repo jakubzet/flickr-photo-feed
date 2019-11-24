@@ -30,13 +30,14 @@ export const EntriesCategoryInfo = styled.div`
     &__primary {
       display: flex;
       flex-basis: auto;
-      align-items: center;
+      align-items: flex-start;
       flex-grow: 1;
       font-family: ${p => p.theme.typography.type.secondary};
       font-weight: ${p => p.theme.typography.weight.bold};
 
       @media screen and (min-width: ${p => p.theme.breakpoints.medium}) {
         font-size: ${p => p.theme.typography.size[3]};
+        margin-bottom: 0.5em;
       }
     }
 
@@ -58,6 +59,7 @@ export const EntriesCategoryInfo = styled.div`
       background-size: contain;
       height: ${rem(24)};
       width: ${rem(24)};
+      margin-top: 0.25rem;
       margin-right: 0.5em;
       flex-shrink: 0;
       transition: transform ${p => p.theme.constants.transitionDuration};
@@ -80,8 +82,12 @@ export const EntriesCategoryInfo = styled.div`
         background-size: cover;
         height: 1.5em;
         width: 1.5em;
-        display: inline-block;
         margin-right: 0.5em;
+        display: inline-block;
+
+        @media screen and (min-width: ${p => p.theme.breakpoints.medium}) {
+          margin-right: 1em;
+        }
       }
     }
   }

@@ -1,31 +1,39 @@
-import React, { useEffect, useState } from "react";
-import { EntriesList } from "../components";
-import { useDispatch } from "react-redux";
-import { apiService } from "../services";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+/* eslint-disable-next-line */
+import { selectors as entriesSelectors } from "../store/entries";
 import { actions as entriesActions } from "../store/entries";
+import { EntriesList } from "../components";
 
 const HomePage = () => {
-  const [entries, setEntries] = useState([]);
   const dispatch = useDispatch();
+  const {
+    categoryName,
+    categoryLink,
+    categoryDate,
+    items,
+    pending,
+    /* eslint-disable-next-line */
+    error
+  } = useSelector(state => state.entries);
 
   const handleClick = () => {
-    dispatch(entriesActions.requestEntries());
+    /* eslint-disable-next-line */
+    alert("LOAD MORE");
   };
 
   useEffect(() => {
-    apiService.get().then(({ data }) => {
-      setEntries(data.items);
-    });
-  }, []);
+    dispatch(entriesActions.requestEntries());
+  }, [dispatch]);
 
   return (
     <>
       <EntriesList
-        categoryName={""}
-        categoryLink={""}
-        categoryDate={""}
-        entries={entries}
-        isFetching={true}
+        categoryName={categoryName}
+        categoryLink={categoryLink}
+        categoryDate={categoryDate}
+        entries={items}
+        isFetching={pending}
         onLoadMoreButtonClick={handleClick}
       />
     </>
