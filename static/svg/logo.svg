@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="124"
+   height="24"
+   viewBox="0 0 124 24"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="logo.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="4.9166667"
+     inkscape:cx="88.857674"
+     inkscape:cy="-7.1146988"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4" />
+  <g
+     id="g983">
+    <path
+       style="fill:#ffffff;stroke-width:0.96186441"
+       inkscape:connector-curvature="0"
+       id="path2"
+       d="m 23.034729,0.49802542 c -0.39725,-0.0269322 -0.785843,-0.0403983 -1.167704,-0.0403983 -8.272033,0 -12.9822835,6.30694498 -14.695364,11.38174188 l 4.546733,4.546733 c 5.221,-1.869865 11.366352,-6.4060171 11.366352,-14.5895596 0,-0.4232203 -0.01635,-0.85605932 -0.05002,-1.29851698 z M 12.187784,14.135339 9.4147288,11.362284 C 10.589165,8.6123136 13.926835,2.7584068 21.148513,2.3977076 20.907085,7.9524746 17.261619,11.950945 12.187784,14.135339 Z m 5.26236,1.479348 c -0.52614,0.358775 -1.048432,0.682923 -1.565915,0.972444 -0.179869,0.857022 -0.636754,1.771755 -1.299479,2.550865 -0.0019,-0.554034 -0.155822,-1.111915 -0.426106,-1.67172 -0.476123,0.216419 -0.929161,0.402059 -1.360076,0.565576 0.63483,1.643826 -0.01154,2.857699 -0.880106,3.995585 1.246576,-0.09426 2.554712,-0.704085 3.58583,-1.736166 1.110954,-1.110953 1.891988,-2.715343 1.945852,-4.676584 z M 6.0809068,9.3923856 C 5.5239873,9.1230636 4.9670678,8.971089 4.4149576,8.9682034 5.1873347,8.3131737 6.0924492,7.8591737 6.9408136,7.6744958 7.242839,7.1435466 7.5823771,6.6193305 7.9401907,6.1037712 5.9789492,6.1566737 4.3735975,6.9377076 3.2616822,8.0496229 2.2315254,9.0797797 1.6207415,10.389839 1.5264788,11.635454 2.6653263,10.765928 3.8791992,10.119555 5.5230254,10.756309 5.689428,10.303271 5.8750678,9.8483089 6.0809068,9.3923856 Z m 7.4429072,0.6377164 c -0.376089,-0.3760891 -0.376089,-0.9839876 0,-1.3600766 0.376089,-0.3760889 0.983987,-0.3760889 1.360076,0 0.376089,0.3770509 0.376089,0.9849495 0,1.3610386 -0.376089,0.376089 -0.984949,0.375127 -1.360076,-9.62e-4 z m 4.760267,-4.762191 c -0.750255,-0.7502542 -1.968937,-0.7502542 -2.720153,0 -0.751216,0.7512161 -0.751216,1.9708602 0,2.7211144 0.751216,0.7512161 1.969898,0.7512161 2.721114,0 0.750255,-0.7502542 0.750255,-1.9689364 -9.61e-4,-2.7211144 z m -1.835238,1.8381229 c -0.262589,-0.262589 -0.262589,-0.6906186 0,-0.9522457 0.260665,-0.262589 0.689657,-0.262589 0.952246,0 0.261627,0.2616271 0.260665,0.6896567 0,0.9522457 -0.263551,0.2616271 -0.690619,0.2616271 -0.952246,0 z M 9.9591441,17.34989 C 8.5240424,21.014593 4.3774449,23.321144 0,23.542373 0.21064831,19.416937 2.5556737,15.197237 6.3867797,13.776564 l 0.7743008,0.775262 C 2.9952458,17.201763 2.6855254,19.693954 2.6739831,20.876085 3.8936271,20.861657 6.5733814,20.545204 9.1935,16.582322 Z" />
+    <g
+       style="fill:#ffffff"
+       transform="translate(0,-0.92032055)"
+       id="g973">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:21.13708878px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.52842724"
+         x="26.661121"
+         y="21.107695"
+         id="text819"><tspan
+           sodipodi:role="line"
+           id="tspan817"
+           x="26.661121"
+           y="21.107695"
+           style="font-style:normal;font-variant:normal;font-weight:100;font-stretch:normal;font-family:'Kelson Sans';-inkscape-font-specification:'Kelson Sans Thin';fill:#ffffff;stroke-width:0.52842724">FLICKR</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:9.14685726px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.22867143"
+         x="85.212097"
+         y="21.319067"
+         id="text819-8-2"><tspan
+           sodipodi:role="line"
+           x="85.212097"
+           y="21.319067"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Kelson Sans';-inkscape-font-specification:'Kelson Sans Bold';fill:#ffffff;stroke-width:0.22867143"
+           id="tspan839-2">FETCHER</tspan></text>
+      <text
+         id="text869"
+         y="11.573801"
+         x="85.212097"
+         style="font-style:normal;font-weight:normal;font-size:9.14685726px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.22867143"
+         xml:space="preserve"><tspan
+           id="tspan867"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:0%;font-family:'Kelson Sans';-inkscape-font-specification:'Kelson Sans Bold';fill:#ffffff;stroke-width:0.22867143"
+           y="11.573801"
+           x="85.212097"
+           sodipodi:role="line">FEEDS</tspan></text>
+    </g>
+  </g>
+</svg>

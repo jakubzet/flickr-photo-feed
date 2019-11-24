@@ -1,6 +1,17 @@
 /* global module, __dirname */
 const path = require("path");
+const DotenvPlugin = require("dotenv-webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+const envFilePath = path.resolve(__dirname, "../.env");
+
+const dotenv = require("dotenv").config({
+  path: envFilePath
+});
+
+const envPlugin = new DotenvPlugin({
+  path: envFilePath
+});
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./react/index.html",
@@ -8,26 +19,42 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = function(env, argv) {
-  /* eslint-disable-next-line */
-  console.log("Webpack build env:", env);
+  const ENV = env.NODE_ENV || "development";
+  const PORT = env.CLIENT_PORT || 3000;
 
   /* eslint-disable-next-line */
-  console.log("Webpack build argv:", argv);
+  console.log("> Project env variables:", dotenv.parsed);
+
+  /* eslint-disable-next-line */
+  console.log("> Webpack build env:", env);
+
+  /* eslint-disable-next-line */
+  console.log("> Webpack build argv:", argv);
+
+  const isDev = ENV === "development";
 
   return {
     entry: "./index.js",
-    mode: "development",
+    mode: isDev ? "development" : "production",
     output: {
-      filename: "./main.js"
+      path: path.resolve("dist"),
+      filename: "bundle.js"
     },
     devServer: {
-      contentBase: path.join(__dirname, "dist"),
       compress: true,
-      port: 9000,
+      port: PORT,
       watchContentBase: true,
-      progress: true
+      progress: true,
+      open: true,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods":
+          "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+        "Access-Control-Allow-Headers":
+          "X-Requested-With, content-type, Authorization"
+      }
     },
-    plugins: [htmlPlugin],
+    plugins: [envPlugin, htmlPlugin],
     module: {
       rules: [
         // JS
@@ -37,6 +64,19 @@ module.exports = function(env, argv) {
           use: {
             loader: "babel-loader"
           }
+        },
+        // Fonts
+        {
+          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+          use: [
+            {
+              loader: "file-loader",
+              options: {
+                name: "[name].[ext]",
+                outputPath: "fonts/"
+              }
+            }
+          ]
         }
       ]
     }

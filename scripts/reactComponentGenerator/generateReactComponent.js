@@ -40,20 +40,25 @@ async function addComponentExport(name) {
   await fs.writeFile(dirPath, indexFileContent);
 
   console.log(
-    `Component ${name} export has been successully added into components' index file`
+    `> Component ${name} export has been successully added into components' index file`
   );
 }
 
 async function generateComponentDirAndFiles(config) {
   const { name } = config;
   const dirPath = path.resolve(componentsDirectoryPath, name);
-  const { componentTpl, testTpl, storiesTpl, indexTpl } = templates;
+  const { componentTpl, styledTpl, testTpl, storiesTpl, indexTpl } = templates;
 
   await fs.mkdir(dirPath);
 
   await fs.writeFile(
     path.resolve(dirPath, `${name}.js`),
     componentTpl.create(name)
+  );
+
+  await fs.writeFile(
+    path.resolve(dirPath, `styled.js`),
+    styledTpl.create(name)
   );
 
   await fs.writeFile(
@@ -68,25 +73,27 @@ async function generateComponentDirAndFiles(config) {
 
   await fs.writeFile(path.resolve(dirPath, "index.js"), indexTpl.create(name));
 
-  console.log(`Component ${name} has been successully created`);
+  console.log(`> Component ${name} has been successully created`);
 
   addComponentExport(name);
 }
 
 async function validateComponentName(input) {
+  const trimmedInput = input.replace(/ /gim, "");
   const hasValidName =
-    textHasProperLength(input) && textStartsWithCapitalLetter(input);
-  const dirExist = await directoryDoesNotExistYet(input);
+    textHasProperLength(trimmedInput) &&
+    textStartsWithCapitalLetter(trimmedInput);
+  const dirExist = await directoryDoesNotExistYet(trimmedInput);
 
   if (!hasValidName) {
     console.error(
-      "\nIncorrect name, please remember to use Capital letter and proper length!"
+      "\n> Incorrect name, please remember to use Capital letter and proper length!"
     );
     return;
   }
 
   if (dirExist) {
-    console.error("\nComponent already exist, please enter some other name!");
+    console.error("\n> Component already exist, please enter some other name!");
     return;
   }
 
@@ -122,5 +129,6 @@ module.exports = {
   textStartsWithCapitalLetter,
   textHasProperLength,
   directoryDoesNotExistYet,
+  promptQuestions,
   initializeGenerator
 };

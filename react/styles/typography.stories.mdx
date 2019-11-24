@@ -1,0 +1,45 @@
+import { Meta, Typeset } from "@storybook/addon-docs/blocks";
+import { stripUnit, px } from "polished";
+import typography from "./typography";
+
+<Meta title="Design System|Typography" />
+
+# Typography
+
+**Font:** Roboto Regular
+
+**Weights:** 400 (regular)
+
+<Typeset
+  style={{
+    fontFamily: "Roboto Regular"
+  }}
+  fontSizes={[
+    stripUnit(typography.size[1]) * 16,
+    stripUnit(typography.size[2]) * 16,
+    stripUnit(typography.size[3]) * 16,
+    stripUnit(typography.size[4]) * 16,
+    stripUnit(typography.size[5]) * 16,
+    stripUnit(typography.size[6]) * 16
+  ]}
+  fontWeight={typography.weight.regular}
+/>
+
+**Font:** Roboto Bold
+
+**Weights:** 700 (bold)
+
+<Typeset
+  style={{
+    fontFamily: "Roboto Bold"
+  }}
+  fontSizes={[
+    stripUnit(typography.size[1]) * 16,
+    stripUnit(typography.size[2]) * 16,
+    stripUnit(typography.size[3]) * 16,
+    stripUnit(typography.size[4]) * 16,
+    stripUnit(typography.size[5]) * 16,
+    stripUnit(typography.size[6]) * 16
+  ]}
+  fontWeight={typography.weight.regular}
+/>

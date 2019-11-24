@@ -4,7 +4,7 @@ const stripIndent = require("strip-indent");
 function create(name) {
   return stripIndent(`
     import React from "react";
-    import { render } from "@testing-library/react";
+    import { render } from "../../utils/reactTestingLibrary";
     import { ${name} } from "./${name}";
 
     describe("${name}", () => {

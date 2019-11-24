@@ -13,7 +13,7 @@ function createFakeResponseData(itemsLength = 2) {
     date_taken: date.recent(),
     description: `<p>${lorem.paragraph()}</p>`,
     published: date.recent(),
-    author: `${internet.email()} (${lorem.word})`,
+    author: `${internet.email()} (\"${lorem.word()}\")`,
     author_id: random.uuid(),
     tags: lorem.words()
   }));

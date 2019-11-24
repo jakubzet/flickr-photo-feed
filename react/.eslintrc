@@ -10,8 +10,12 @@
   "env": {
     "es6": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "plugins": ["react-hooks"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": ["react-hooks", "jsx-a11y"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",
