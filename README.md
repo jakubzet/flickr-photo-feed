@@ -2,7 +2,7 @@
 
 ### Online demo
 
-I encourage you to view the online demo I pushed into my [private server](pitahaja.usermd.net/demo_flickr/index.html).
+I encourage you to view the online demo I pushed into my [private server](http://pitahaja.usermd.net/demo_flickr/index.html).
 
 ### Running up the project
 
