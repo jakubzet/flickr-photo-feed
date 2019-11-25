@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "react:dev": "webpack-dev-server ./react --config ./react/webpack.config.js --env.NODE_ENV=development",
-    "react:start": "webpack ./react --config ./react/webpack.config.js --env.NODE_ENV=production",
+    "react:build": "webpack ./react --config ./react/webpack.config.js --env.NODE_ENV=production",
     "react:gc": "node -r dotenv/config ./scripts/reactComponentGenerator",
     "server:dev": "nodemon --exec 'node -r dotenv/config' ./server/index.js",
     "lint:server": "eslint ./server --fix",

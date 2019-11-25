@@ -23,6 +23,7 @@ export const CloseButton = styled.div`
   right: 1.5rem;
   font-size: 3em;
   z-index: 902;
+  width: auto !important;
 
   a {
     color: ${p => p.theme.colors.neonCarrot};
@@ -55,5 +56,6 @@ export const ModalContent = styled.div`
 
   & > * {
     max-height: 100%;
+    width: 100%;
   }
 `;

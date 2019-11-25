@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Logo = styled.a`
-  background: url("../static/svg/logo.svg") left center no-repeat;
+  background: url("../static/svg/app-logo.svg") left center no-repeat;
   background-size: contain;
   flex-grow: 0;
   width: ${rem(124)};
