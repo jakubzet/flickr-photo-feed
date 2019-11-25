@@ -24,7 +24,7 @@ const entriesReducer = typeToReducer(
       categoryName: payload.title,
       categoryLink: payload.link,
       categoryDate: payload.modified,
-      items: payload.items,
+      items: [...state.items, ...payload.items],
       pending: false,
       error: null
     }),

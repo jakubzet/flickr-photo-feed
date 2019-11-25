@@ -44,6 +44,8 @@ module.exports = function(env, argv) {
       compress: true,
       port: PORT,
       watchContentBase: true,
+      publicPath: "/",
+      historyApiFallback: true,
       progress: true,
       open: true,
       headers: {

@@ -12,6 +12,8 @@ const HomePage = () => {
     categoryLink,
     categoryDate,
     pending,
+    filterText,
+    // TODO: Error handling
     /* eslint-disable-next-line */
     error
   } = useSelector(entriesSelectors.storeSelector);
@@ -19,8 +21,7 @@ const HomePage = () => {
   const items = useSelector(entriesSelectors.filteredEntriesItemsSelector);
 
   const handleClick = () => {
-    /* eslint-disable-next-line */
-    alert("LOAD MORE");
+    dispatch(entriesActions.requestEntries());
   };
 
   useEffect(() => {
@@ -35,6 +36,7 @@ const HomePage = () => {
         categoryDate={categoryDate}
         entries={items}
         isFetching={pending}
+        showLoadMoreButton={!filterText.length}
         onLoadMoreButtonClick={handleClick}
       />
     </>

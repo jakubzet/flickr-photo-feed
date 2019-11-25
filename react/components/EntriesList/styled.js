@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { rem, transparentize, darken, lighten } from "polished";
+import styled, { css } from "styled-components";
+import { rem, transparentize } from "polished";
 import { hideText } from "polished";
 
 export const EntriesCategoryInfoWrapper = styled.div`
@@ -30,7 +30,7 @@ export const EntriesCategoryInfo = styled.div`
     &__primary {
       display: flex;
       flex-basis: auto;
-      align-items: flex-start;
+      align-items: center;
       flex-grow: 1;
       font-family: ${p => p.theme.typography.type.secondary};
       font-weight: ${p => p.theme.typography.weight.bold};
@@ -59,7 +59,6 @@ export const EntriesCategoryInfo = styled.div`
       background-size: contain;
       height: ${rem(24)};
       width: ${rem(24)};
-      margin-top: 0.25rem;
       margin-right: 0.5em;
       flex-shrink: 0;
       transition: transform ${p => p.theme.constants.transitionDuration};
@@ -119,9 +118,13 @@ export const Entry = styled.li`
       overflow: hidden;
       ${p => p.theme.helpers.createWrapper()};
 
-      @media screen and (min-width: ${p => p.theme.breakpoints.medium}) {
-        flex-direction: row;
-      }
+      ${p =>
+        !p.forceMobileView &&
+        css`
+          @media screen and (min-width: ${p => p.theme.breakpoints.medium}) {
+            flex-direction: row;
+          }
+        `}
     }
 
     &__wrapper {
@@ -135,41 +138,65 @@ export const Entry = styled.li`
       margin-bottom: 0.5rem;
       flex-shrink: 0;
 
-      @media screen and (min-width: ${p => p.theme.breakpoints.medium}) {
-        margin-right: 1rem;
-        margin-bottom: 0;
-        width: ${rem(340)};
-        height: ${rem(256)};
-      }
+      ${p =>
+        p.forceMobileView &&
+        css`
+          text-align: center;
+        `}
+
+      ${p =>
+        !p.forceMobileView &&
+        css`
+          @media screen and (min-width: ${p => p.theme.breakpoints.medium}) {
+            margin-right: 1rem;
+            margin-bottom: 0;
+            width: ${rem(340)};
+            height: ${rem(256)};
+          }
+        `}
 
       & img {
         border-radius: ${rem(2)};
         object-fit: cover;
         width: inherit;
         height: inherit;
+
+        ${p =>
+          p.forceMobileView &&
+          css`
+            max-width: 50vh;
+          `}
       }
     }
 
     &__title {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       font-family: ${p => p.theme.typography.type.secondary};
       font-weight: ${p => p.theme.typography.weight.bold};
       font-size: ${p => p.theme.typography.size[2]};
       margin-bottom: 0.5em;
+
+      ${p =>
+        !p.forceMobileView &&
+        css`
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        `}
+    }
+
+    &__desc {
+      margin-bottom: 1em;
     }
 
     &__tags {
       display: flex;
       flex-basis: auto;
       flex-wrap: wrap;
-      margin-bottom: 1em;
+      margin-bottom: 0.75em;
+      margin-left: -0.25em;
 
       li {
-        & + li {
-          margin-left: 0.5em;
-        }
+        margin: 0 0.25em;
       }
     }
 
@@ -182,19 +209,27 @@ export const Entry = styled.li`
         margin-right: 1em;
       }
 
-      @media screen and (min-width: ${p => p.theme.breakpoints.large}) {
-        flex-wrap: nowrap;
-      }
+      ${p =>
+        !p.forceMobileView &&
+        css`
+          @media screen and (min-width: ${p => p.theme.breakpoints.large}) {
+            flex-wrap: nowrap;
+          }
+        `}
     }
 
     &__date {
       width: 100%;
       order: 1;
 
-      @media screen and (min-width: ${p => p.theme.breakpoints.large}) {
-        width: auto;
-        order: 3;
-      }
+      ${p =>
+        !p.forceMobileView &&
+        css`
+          @media screen and (min-width: ${p => p.theme.breakpoints.large}) {
+            width: auto;
+            order: 3;
+          }
+        `}
     }
 
     &__author {
@@ -207,16 +242,17 @@ export const Entry = styled.li`
   }
 `;
 
-export const EntryTag = styled.div`
-  background: ${p => p.theme.colors.neonCarrot};
+export const EntryTag = styled.a`
   padding: 0.5em 1em;
+  margin: 0.25em 0;
   border-radius: ${rem(2)};
   text-transform: uppercase;
   font-size: 0.75em;
+  display: inline-block;
+  ${p => p.theme.helpers.createHoverEffect()}
 `;
 
 export const EntriesFetchButton = styled.button`
-  background: ${p => p.theme.colors.neonCarrot};
   color: ${p => p.theme.colors.shark};
   font-family: ${p => p.theme.typography.type.secondary};
   font-weight: ${p => p.theme.typography.weight.bold};
@@ -227,17 +263,7 @@ export const EntriesFetchButton = styled.button`
   border-radius: ${rem(2)};
   ${p => p.theme.helpers.createWrapper()};
   margin-bottom: 1rem;
-
-  &:hover,
-  &:active {
-    cursor: pointer;
-    background: ${p => darken(0.25, p.theme.colors.neonCarrot)};
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    background: ${p => lighten(0.25, p.theme.colors.neonCarrot)};
-  }
+  ${p => p.theme.helpers.createHoverEffect()}
 
   @media screen and (min-width: ${p => p.theme.breakpoints.medium}) {
     width: calc(100% - 2rem);

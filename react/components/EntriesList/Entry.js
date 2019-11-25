@@ -1,10 +1,12 @@
 import React from "react";
 import P from "prop-types";
+import { Link } from "react-router-dom";
 import { prettifyDate } from "../../helpers";
 import * as S from "./styled";
 
 const defaultProps = {
-  data: {}
+  showDescription: false,
+  forceMobileView: false
 };
 
 const prepareTagsList = tagsStr => {
@@ -15,41 +17,77 @@ const prepareTagsList = tagsStr => {
       const tagKey = `tag_${idx}`;
       return (
         <li key={tagKey}>
-          <S.EntryTag>{tag}</S.EntryTag>
+          <S.EntryTag
+            href={`https://www.flickr.com/search/?q=${tag}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {tag}
+          </S.EntryTag>
         </li>
       );
     });
 };
 
-const prepareCreditsLink = (authorStr = 'sample@mail.com ("sampleNick")') => {
+const prepareCreditsLink = (authorStr = '# ("anonymous")') => {
   const [mail, nickname] = authorStr.split(" ");
-
-  const prettyNickname = nickname.match(/\(.+\)/i)[0].replace(/[(")]/gi, "");
+  const prettyNickname = nickname.replace(/[(")]/gi, "");
 
   return <a href={`mailto:${mail}`}>{prettyNickname}</a>;
 };
 
-export const Entry = ({ data } = defaultProps) => {
+export const Entry = ({
+  data,
+  idx,
+  showDescription,
+  forceMobileView
+} = defaultProps) => {
   const hasTags = data.tags && data.tags.trim().length;
+  const detailsURL = `/details/${idx}`;
+
+  const displayTitle = () => <h2 className="Entry__title">{data.title}</h2>;
+  const displayImage = () => <img src={data.media.m} alt={data.title} />;
 
   return (
-    <S.Entry>
+    <S.Entry forceMobileView={forceMobileView}>
       <article className="Entry__container">
-        <div className="Entry__image-wrapper">
-          <img src={data.media.m} alt={data.title} />
-        </div>
+        {showDescription ? (
+          <div className="Entry__image-wrapper">{displayImage()}</div>
+        ) : (
+          <Link to={detailsURL} className="Entry__image-wrapper">
+            {displayImage()}
+          </Link>
+        )}
+
         <div className="Entry__wrapper">
-          <h2 className="Entry__title">{data.title}</h2>
+          {showDescription ? (
+            displayTitle()
+          ) : (
+            <Link to={detailsURL}>{displayTitle()}</Link>
+          )}
+
+          {showDescription && (
+            <div
+              className="Entry__desc"
+              dangerouslySetInnerHTML={{
+                __html: data.description
+              }}
+            />
+          )}
+
           {hasTags && (
             <ul className="Entry__tags">{prepareTagsList(data.tags)}</ul>
           )}
+
           <div className="Entry__credits">
             Photo by: {prepareCreditsLink(data.author)}
           </div>
+
           <div className="Entry__details">
             <div className="Entry__date">
               Published: {prettifyDate(data.published)}
             </div>
+
             <div className="Entry__author">
               <a
                 href={`https://www.flickr.com/photos/${data.author_id}`}
@@ -59,6 +97,7 @@ export const Entry = ({ data } = defaultProps) => {
                 Author&apos;s page
               </a>
             </div>
+
             <div className="Entry__link">
               <a href={data.link} target="_blank" rel="noopener noreferrer">
                 View on flickr
@@ -72,6 +111,7 @@ export const Entry = ({ data } = defaultProps) => {
 };
 
 Entry.propTypes = {
+  idx: P.number.isRequired,
   data: P.shape({
     title: P.string.isRequired,
     link: P.string.isRequired,
@@ -84,5 +124,7 @@ Entry.propTypes = {
     author: P.string.isRequired,
     author_id: P.string.isRequired,
     tags: P.string.isRequired
-  })
+  }).isRequired,
+  showDescription: P.bool,
+  forceMobileView: P.bool
 };

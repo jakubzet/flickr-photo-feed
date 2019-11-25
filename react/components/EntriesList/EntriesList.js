@@ -9,6 +9,7 @@ const defaultProps = {
   categoryLink: "",
   categoryDate: "",
   entries: [],
+  showLoadMoreButton: false,
   onLoadMoreButtonClick: () => {}
 };
 
@@ -18,6 +19,7 @@ export const EntriesList = ({
   categoryDate,
   entries,
   isFetching,
+  showLoadMoreButton,
   onLoadMoreButtonClick
 } = defaultProps) => {
   return (
@@ -32,18 +34,20 @@ export const EntriesList = ({
         {entries &&
           entries.map((entry, idx) => {
             const entryKey = `entry_${idx}`;
-            return <Entry key={entryKey} data={entry} />;
+            return <Entry key={entryKey} data={entry} idx={idx} />;
           })}
       </S.Entries>
 
-      <S.EntriesFetchButton
-        type="button"
-        className="entries-list__fetch-button"
-        onClick={onLoadMoreButtonClick}
-        disabled={isFetching}
-      >
-        Load more...
-      </S.EntriesFetchButton>
+      {showLoadMoreButton && (
+        <S.EntriesFetchButton
+          type="button"
+          className="entries-list__fetch-button"
+          onClick={onLoadMoreButtonClick}
+          disabled={isFetching}
+        >
+          Load more...
+        </S.EntriesFetchButton>
+      )}
     </S.EntriesList>
   );
 };
@@ -70,5 +74,6 @@ EntriesList.propTypes = {
     })
   ),
   isFetching: P.bool.isRequired,
+  showLoadMoreButton: P.bool,
   onLoadMoreButtonClick: P.func
 };

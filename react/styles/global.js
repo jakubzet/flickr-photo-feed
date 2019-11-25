@@ -46,6 +46,10 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
   }
 
+  li {
+    list-style-type: none;
+  }
+
   button {
     margin: 0;
     padding: 0;
