@@ -38,12 +38,15 @@ const prepareCreditsLink = (authorStr = '# ("anonymous")') => {
 
 export const Entry = ({
   data,
-  idx,
   showDescription,
   forceMobileView
 } = defaultProps) => {
   const hasTags = data.tags && data.tags.trim().length;
-  const detailsURL = `/details/${idx}`;
+  const itemID = data.link
+    .split("/")
+    .filter(i => !!i)
+    .reverse()[0];
+  const detailsURL = `/details/${itemID}`;
 
   const displayTitle = () => <h2 className="Entry__title">{data.title}</h2>;
   const displayImage = () => <img src={data.media.m} alt={data.title} />;
@@ -111,7 +114,6 @@ export const Entry = ({
 };
 
 Entry.propTypes = {
-  idx: P.number.isRequired,
   data: P.shape({
     title: P.string.isRequired,
     link: P.string.isRequired,

@@ -7,7 +7,7 @@ import { EntriesList, Modal } from "../components";
 const DetailsPage = () => {
   const { id } = useParams();
   const { items } = useSelector(entriesSelectors.storeSelector);
-  const itemData = items[id];
+  const itemData = items.find(item => item.link.indexOf(id) > -1);
 
   if (!itemData) {
     return <Redirect to="/" />;

@@ -35,7 +35,7 @@ export const EntriesList = ({
         {entries && entries.length > 0 ? (
           entries.map((entry, idx) => {
             const entryKey = `entry_${idx}`;
-            return <Entry key={entryKey} data={entry} idx={idx} />;
+            return <Entry key={entryKey} data={entry} />;
           })
         ) : (
           <S.EntriesLoaderWrapper>
