@@ -1,5 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require("cors");
 const fakeDataGenerator = require("./fakeDataGenerator");
 
 const PORT = process.env.SERVER_PORT || 8080;
@@ -22,9 +23,10 @@ function initServerListener(mode = ENV) {
   const router = express.Router();
 
   router.get("/api", (_, res) => {
-    res.json(fakeDataGenerator.createFakeResponseData());
+    res.jsonp(fakeDataGenerator.createFakeResponseData(4));
   });
 
+  server.use(cors());
   server.use(morgan("tiny"));
   server.use(router);
 
