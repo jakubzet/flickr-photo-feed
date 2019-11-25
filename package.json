@@ -21,10 +21,8 @@
   },
   "keywords": [
     "javascript",
-    "typescript",
     "react",
-    "redux",
-    "angular"
+    "redux"
   ],
   "author": "jakubzet",
   "license": "MIT",
