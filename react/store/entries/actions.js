@@ -14,8 +14,14 @@ const errorEntries = errorMessage => ({
   payload: errorMessage
 });
 
+const filterEntries = filterText => ({
+  type: types.ENTRIES_SET_FILTER,
+  payload: filterText
+});
+
 export default {
   requestEntries,
   writeEntries,
-  errorEntries
+  errorEntries,
+  filterEntries
 };

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { hideText, rem } from "polished";
+import { hideText, rem, darken } from "polished";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -68,6 +68,25 @@ export const Search = styled.input`
 
   @media screen and (min-width: ${p => p.theme.breakpoints.medium}) {
     font-size: ${p => p.theme.typography.size[2]};
+  }
+`;
+
+export const SearchClearButton = styled.button`
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-basis: auto;
+  justify-content: center;
+  align-items: center;
+  transition: color ${p => p.theme.constants.transitionDuration};
+  color: ${p => p.theme.colors.neonCarrot};
+  padding: 0 1em;
+  font-size: 2em;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    color: ${p => darken(0.25, p.theme.colors.neonCarrot)};
   }
 `;
 

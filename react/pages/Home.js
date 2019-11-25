@@ -1,21 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-/* eslint-disable-next-line */
 import { selectors as entriesSelectors } from "../store/entries";
 import { actions as entriesActions } from "../store/entries";
 import { EntriesList } from "../components";
 
 const HomePage = () => {
   const dispatch = useDispatch();
+
   const {
     categoryName,
     categoryLink,
     categoryDate,
-    items,
     pending,
     /* eslint-disable-next-line */
     error
-  } = useSelector(state => state.entries);
+  } = useSelector(entriesSelectors.storeSelector);
+
+  const items = useSelector(entriesSelectors.filteredEntriesItemsSelector);
 
   const handleClick = () => {
     /* eslint-disable-next-line */

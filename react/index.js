@@ -4,9 +4,9 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 
-import { Layout, Header, Footer } from "./components";
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes";
+import DefaultLayout from "./layouts/DefaultLayout";
 import HomePage from "./pages/Home";
 import configureStore from "./store";
 
@@ -17,9 +17,9 @@ const App = () => (
     <ThemeProvider theme={defaultTheme}>
       <>
         <GlobalStyle />
-        <Layout header={<Header />} footer={<Footer />}>
+        <DefaultLayout>
           <HomePage />
-        </Layout>
+        </DefaultLayout>
       </>
     </ThemeProvider>
   </Provider>

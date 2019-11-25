@@ -6,6 +6,7 @@ const initialState = {
   categoryLink: null,
   categoryDate: null,
   items: [],
+  filterText: "",
   pending: false,
   error: null
 };
@@ -32,6 +33,11 @@ const entriesReducer = typeToReducer(
       ...state,
       pending: false,
       error: payload
+    }),
+
+    [types.ENTRIES_SET_FILTER]: (state, { payload }) => ({
+      ...state,
+      filterText: payload.trim().toLowerCase()
     })
   },
   initialState
