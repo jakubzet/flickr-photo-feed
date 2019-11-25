@@ -51,7 +51,7 @@ export const ModalContent = styled.div`
   border-radius: ${rem(2)};
   z-index: 901;
   overflow: auto;
-  padding: 4rem 0;
+  padding: 4rem 2rem;
 
   & > * {
     max-height: 100%;

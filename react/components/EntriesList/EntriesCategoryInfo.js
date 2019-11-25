@@ -14,9 +14,9 @@ const loaderStyles = {
 };
 
 const defaultProps = {
-  title: "",
-  link: "#",
-  date: ""
+  title: null,
+  link: null,
+  date: null
 };
 
 export const EntriesCategoryInfo = ({

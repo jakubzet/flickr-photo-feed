@@ -1,5 +1,6 @@
 import React from "react";
 import P from "prop-types";
+import { List } from "react-content-loader";
 import * as S from "./styled";
 import { EntriesCategoryInfo } from "./EntriesCategoryInfo";
 import { Entry } from "./Entry";
@@ -31,11 +32,16 @@ export const EntriesList = ({
         isLoadingData={isFetching}
       />
       <S.Entries>
-        {entries &&
+        {entries && entries.length > 0 ? (
           entries.map((entry, idx) => {
             const entryKey = `entry_${idx}`;
             return <Entry key={entryKey} data={entry} idx={idx} />;
-          })}
+          })
+        ) : (
+          <S.EntriesLoaderWrapper>
+            <List />
+          </S.EntriesLoaderWrapper>
+        )}
       </S.Entries>
 
       {showLoadMoreButton && (
@@ -45,7 +51,7 @@ export const EntriesList = ({
           onClick={onLoadMoreButtonClick}
           disabled={isFetching}
         >
-          Load more...
+          Load more
         </S.EntriesFetchButton>
       )}
     </S.EntriesList>

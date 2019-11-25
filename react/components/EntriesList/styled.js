@@ -95,10 +95,21 @@ export const EntriesCategoryInfo = styled.div`
 export const EntriesList = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
 `;
 
 export const Entries = styled.ul`
   flex-grow: 1;
+`;
+
+export const EntriesLoaderWrapper = styled.div`
+  flex-grow: 1;
+  display: flex;
+  flex-basis: auto;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  ${p => p.theme.helpers.createWrapper()};
 `;
 
 export const Entry = styled.li`
