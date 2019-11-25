@@ -47,7 +47,7 @@ async function addComponentExport(name) {
 async function generateComponentDirAndFiles(config) {
   const { name } = config;
   const dirPath = path.resolve(componentsDirectoryPath, name);
-  const { componentTpl, styledTpl, testTpl, storiesTpl, indexTpl } = templates;
+  const { componentTpl, styledTpl, testTpl, indexTpl } = templates;
 
   await fs.mkdir(dirPath);
 
@@ -64,11 +64,6 @@ async function generateComponentDirAndFiles(config) {
   await fs.writeFile(
     path.resolve(dirPath, `${name}.test.js`),
     testTpl.create(name)
-  );
-
-  await fs.writeFile(
-    path.resolve(dirPath, `${name}.stories.mdx`),
-    storiesTpl.create(name)
   );
 
   await fs.writeFile(path.resolve(dirPath, "index.js"), indexTpl.create(name));

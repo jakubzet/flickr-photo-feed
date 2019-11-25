@@ -17,7 +17,7 @@ export const Header = ({ onFilterChange, onFilterClear } = defaultProps) => {
 
   useEffect(() => {
     onFilterChange(filterValue);
-  }, [filterValue]);
+  }, [filterValue, onFilterChange]);
 
   return (
     <S.Header>
