@@ -13,6 +13,7 @@
     "lint:react": "eslint ./react --fix",
     "test": "jest .",
     "test:watch": "jest . --watch",
+    "test:update-snapshot": "jest . --updateSnapshot",
     "test:coverage": "jest --coverage"
   },
   "repository": {

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Renders 1`] = `
+<DocumentFragment>
+  <main
+    class="sc-bdVaJa enOrLy"
+  >
+    <div>
+      Header
+    </div>
+    Hello!
+    <div>
+      Footer
+    </div>
+  </main>
+</DocumentFragment>
+`;

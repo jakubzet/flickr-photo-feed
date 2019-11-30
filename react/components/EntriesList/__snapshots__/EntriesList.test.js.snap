@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EntriesList Renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-htpNat eQVbpW"
+  >
+    <div
+      class="sc-bdVaJa dabJse"
+    >
+      <div
+        class="sc-bwzfXH bvKcmb"
+      >
+        <div
+          class="EntriesCategoryInfo"
+        >
+          <div
+            class="EntriesCategoryInfo__primary"
+          >
+            <a
+              class="EntriesCategoryInfo__link"
+            />
+            <div
+              class="EntriesCategoryInfo__title"
+            />
+          </div>
+          <div
+            class="EntriesCategoryInfo__secondary"
+          >
+            <div
+              class="EntriesCategoryInfo__date"
+            >
+              Modified: 2rd January 1970 at 01:00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul
+      class="sc-bxivhb khxFsg"
+    >
+      <div
+        class="sc-ifAKCX jwDStv"
+      >
+        <svg
+          aria-label="Loading interface..."
+          preserveAspectRatio="none"
+          role="img"
+          viewBox="0 0 400 130"
+        >
+          <title>
+            Loading interface...
+          </title>
+          <rect
+            clip-path="url(#21qa640rw0d)"
+            height="130"
+            style="fill: url(#v5mgr79qda);"
+            width="400"
+            x="0"
+            y="0"
+          />
+          <defs>
+            <clippath
+              id="21qa640rw0d"
+            >
+              <rect
+                height="10"
+                rx="3"
+                ry="3"
+                width="250"
+                x="0"
+                y="0"
+              />
+              <rect
+                height="10"
+                rx="3"
+                ry="3"
+                width="220"
+                x="20"
+                y="20"
+              />
+              <rect
+                height="10"
+                rx="3"
+                ry="3"
+                width="170"
+                x="20"
+                y="40"
+              />
+              <rect
+                height="10"
+                rx="3"
+                ry="3"
+                width="250"
+                x="0"
+                y="60"
+              />
+              <rect
+                height="10"
+                rx="3"
+                ry="3"
+                width="200"
+                x="20"
+                y="80"
+              />
+              <rect
+                height="10"
+                rx="3"
+                ry="3"
+                width="80"
+                x="20"
+                y="100"
+              />
+            </clippath>
+            <lineargradient
+              id="v5mgr79qda"
+            >
+              <stop
+                offset="0%"
+                stop-color="#f0f0f0"
+                stop-opacity="1"
+              >
+                <animate
+                  attributeName="offset"
+                  dur="2s"
+                  keyTimes="0; 0.25; 1"
+                  repeatCount="indefinite"
+                  values="-2; -2; 1"
+                />
+              </stop>
+              <stop
+                offset="50%"
+                stop-color="#e0e0e0"
+                stop-opacity="1"
+              >
+                <animate
+                  attributeName="offset"
+                  dur="2s"
+                  keyTimes="0; 0.25; 1"
+                  repeatCount="indefinite"
+                  values="-1; -1; 2"
+                />
+              </stop>
+              <stop
+                offset="100%"
+                stop-color="#f0f0f0"
+                stop-opacity="1"
+              >
+                <animate
+                  attributeName="offset"
+                  dur="2s"
+                  keyTimes="0; 0.25; 1"
+                  repeatCount="indefinite"
+                  values="0; 0; 3"
+                />
+              </stop>
+            </lineargradient>
+          </defs>
+        </svg>
+      </div>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

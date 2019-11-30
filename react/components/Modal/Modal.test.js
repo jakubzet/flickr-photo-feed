@@ -4,8 +4,9 @@ import { Modal } from "./Modal";
 
 describe("Modal", () => {
   it("Renders", () => {
-    const { container } = render(<Modal />);
+    const { container, asFragment } = render(<Modal />);
 
     expect(container).toBeDefined();
+    expect(asFragment()).toMatchSnapshot();
   });
 });

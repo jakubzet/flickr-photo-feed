@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Renders 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-EHOje gzhQJG"
+  >
+    <div
+      class="sc-bdVaJa jLEixs"
+    >
+      <a
+        class="sc-bwzfXH cbtDgI"
+        href="/"
+      >
+        <h1>
+          Flickr Feeds Fetcher
+        </h1>
+      </a>
+      <div
+        class="sc-htpNat dHwdXQ"
+      >
+        <input
+          class="sc-bxivhb llzmIy"
+          placeholder="Filter feed..."
+          type="text"
+          value=""
+        />
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;

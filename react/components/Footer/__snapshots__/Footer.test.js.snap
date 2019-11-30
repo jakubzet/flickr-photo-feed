@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Renders 1`] = `
+<DocumentFragment>
+  <footer
+    class="sc-bdVaJa cIDTaq"
+  >
+    <div
+      class="sc-bwzfXH dZRTCS"
+    >
+      © 2019 
+      <a
+        href="http://pitahaya.pro"
+      >
+        Jakub Żywiec
+      </a>
+      . All rights reserved. Respect your and other people's work.
+    </div>
+  </footer>
+</DocumentFragment>
+`;

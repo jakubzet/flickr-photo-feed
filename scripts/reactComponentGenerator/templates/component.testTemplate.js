@@ -9,9 +9,10 @@ function create(name) {
 
     describe("${name}", () => {
       it("Renders", () => {
-        const { container } = render(<${name} />);
+        const { container, asFragment } = render(<${name} />);
 
         expect(container).toBeDefined();
+        expect(asFragment()).toMatchSnapshot();
       });
     });
   `).trim();

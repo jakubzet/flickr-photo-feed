@@ -4,8 +4,11 @@ import { EntriesList } from "./EntriesList";
 
 describe("EntriesList", () => {
   it("Renders", () => {
-    const { container } = render(<EntriesList isFetching={false} />);
+    const { container, asFragment } = render(
+      <EntriesList isFetching={false} />
+    );
 
     expect(container).toBeDefined();
+    expect(asFragment()).toMatchSnapshot();
   });
 });
