@@ -52,16 +52,16 @@ exports[`EntriesList Renders 1`] = `
             Loading interface...
           </title>
           <rect
-            clip-path="url(#8ly5w46d0mg)"
+            clip-path="url(#xjnyi6bp2ia)"
             height="130"
-            style="fill: url(#iwgetbjw9ri);"
+            style="fill: url(#11afv311grb);"
             width="400"
             x="0"
             y="0"
           />
           <defs>
             <clippath
-              id="8ly5w46d0mg"
+              id="xjnyi6bp2ia"
             >
               <rect
                 height="10"
@@ -113,7 +113,7 @@ exports[`EntriesList Renders 1`] = `
               />
             </clippath>
             <lineargradient
-              id="iwgetbjw9ri"
+              id="11afv311grb"
             >
               <stop
                 offset="0%"
