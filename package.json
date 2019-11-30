@@ -12,8 +12,8 @@
     "lint:scripts": "eslint ./scripts --fix",
     "lint:react": "eslint ./react --fix",
     "test": "jest .",
+    "pretest": "jest . --updateSnapshot",
     "test:watch": "jest . --watch",
-    "test:update-snapshot": "jest . --updateSnapshot",
     "test:coverage": "jest --coverage"
   },
   "repository": {
