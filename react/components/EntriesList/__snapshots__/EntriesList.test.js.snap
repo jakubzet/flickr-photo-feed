@@ -1,0 +1,140 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EntriesList Renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-htpNat eQVbpW"
+  >
+    <div
+      class="sc-bdVaJa dabJse"
+    >
+      <div
+        class="sc-bwzfXH bvKcmb"
+      >
+        <div
+          class="EntriesCategoryInfo"
+        >
+          <div
+            class="EntriesCategoryInfo__primary"
+          >
+            <a
+              class="EntriesCategoryInfo__link"
+            />
+            <div
+              class="EntriesCategoryInfo__title"
+            />
+          </div>
+          <div
+            class="EntriesCategoryInfo__secondary"
+          >
+            <div
+              class="EntriesCategoryInfo__date"
+            >
+              Modified: 2rd January 1970 at 01:00
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul
+      class="sc-bxivhb khxFsg"
+    >
+      <li
+        class="sc-EHOje kZZGZj"
+      >
+        <article
+          class="Entry__container"
+        >
+          <a
+            class="Entry__image-wrapper"
+            href="/details/"
+          >
+            <img
+              alt="Lorem ipsum"
+              src="#"
+            />
+          </a>
+          <div
+            class="Entry__wrapper"
+          >
+            <a
+              href="/details/"
+            >
+              <h2
+                class="Entry__title"
+              >
+                Lorem ipsum
+              </h2>
+            </a>
+            <ul
+              class="Entry__tags"
+            >
+              <li>
+                <a
+                  class="sc-bZQynM hmQsdg"
+                  href="https://www.flickr.com/search/?q=Lorem"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Lorem
+                </a>
+              </li>
+              <li>
+                <a
+                  class="sc-bZQynM hmQsdg"
+                  href="https://www.flickr.com/search/?q=ipsum"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  ipsum
+                </a>
+              </li>
+            </ul>
+            <div
+              class="Entry__credits"
+            >
+              Photo by: 
+              <a
+                href="mailto:Lorem"
+              >
+                ipsum
+              </a>
+            </div>
+            <div
+              class="Entry__details"
+            >
+              <div
+                class="Entry__date"
+              >
+                Published: 28th December 2019 at 01:14
+              </div>
+              <div
+                class="Entry__author"
+              >
+                <a
+                  href="https://www.flickr.com/photos/id1"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Author's page
+                </a>
+              </div>
+              <div
+                class="Entry__link"
+              >
+                <a
+                  href="#"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  View on flickr
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

@@ -10,7 +10,7 @@ const defaultProps = {
 export const Modal = ({ children, closeButtonContent } = defaultProps) => (
   <S.Modal>
     <S.ModalContent>
-      <S.CloseButton>{closeButtonContent}</S.CloseButton>
+      <S.CloseButton>{closeButtonContent()}</S.CloseButton>
       {children}
     </S.ModalContent>
   </S.Modal>
@@ -20,5 +20,5 @@ Modal.defaultProps = defaultProps;
 
 Modal.propTypes = {
   children: P.node,
-  closeButtonContent: P.node
+  closeButtonContent: P.func
 };

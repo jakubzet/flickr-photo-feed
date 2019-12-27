@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Renders 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa lcDbZB"
+  >
+    <div
+      class="sc-htpNat gznbeD"
+    >
+      <div
+        class="sc-bwzfXH hZfRXl"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;

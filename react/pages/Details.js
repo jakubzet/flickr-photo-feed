@@ -14,7 +14,7 @@ const DetailsPage = () => {
   }
 
   return (
-    <Modal closeButtonContent={<Link to="/">&times;</Link>}>
+    <Modal closeButtonContent={() => <Link to="/">&times;</Link>}>
       <div>
         <EntriesList.Entry
           idx={+id}
