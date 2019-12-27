@@ -39,125 +39,101 @@ exports[`EntriesList Renders 1`] = `
     <ul
       class="sc-bxivhb khxFsg"
     >
-      <div
-        class="sc-ifAKCX jwDStv"
+      <li
+        class="sc-EHOje kZZGZj"
       >
-        <svg
-          aria-label="Loading interface..."
-          preserveAspectRatio="none"
-          role="img"
-          viewBox="0 0 400 130"
+        <article
+          class="Entry__container"
         >
-          <title>
-            Loading interface...
-          </title>
-          <rect
-            clip-path="url(#xjnyi6bp2ia)"
-            height="130"
-            style="fill: url(#11afv311grb);"
-            width="400"
-            x="0"
-            y="0"
-          />
-          <defs>
-            <clippath
-              id="xjnyi6bp2ia"
+          <a
+            class="Entry__image-wrapper"
+            href="/details/"
+          >
+            <img
+              alt="Lorem ipsum"
+              src="#"
+            />
+          </a>
+          <div
+            class="Entry__wrapper"
+          >
+            <a
+              href="/details/"
             >
-              <rect
-                height="10"
-                rx="3"
-                ry="3"
-                width="250"
-                x="0"
-                y="0"
-              />
-              <rect
-                height="10"
-                rx="3"
-                ry="3"
-                width="220"
-                x="20"
-                y="20"
-              />
-              <rect
-                height="10"
-                rx="3"
-                ry="3"
-                width="170"
-                x="20"
-                y="40"
-              />
-              <rect
-                height="10"
-                rx="3"
-                ry="3"
-                width="250"
-                x="0"
-                y="60"
-              />
-              <rect
-                height="10"
-                rx="3"
-                ry="3"
-                width="200"
-                x="20"
-                y="80"
-              />
-              <rect
-                height="10"
-                rx="3"
-                ry="3"
-                width="80"
-                x="20"
-                y="100"
-              />
-            </clippath>
-            <lineargradient
-              id="11afv311grb"
+              <h2
+                class="Entry__title"
+              >
+                Lorem ipsum
+              </h2>
+            </a>
+            <ul
+              class="Entry__tags"
             >
-              <stop
-                offset="0%"
-                stop-color="#f0f0f0"
-                stop-opacity="1"
+              <li>
+                <a
+                  class="sc-bZQynM hmQsdg"
+                  href="https://www.flickr.com/search/?q=Lorem"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Lorem
+                </a>
+              </li>
+              <li>
+                <a
+                  class="sc-bZQynM hmQsdg"
+                  href="https://www.flickr.com/search/?q=ipsum"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  ipsum
+                </a>
+              </li>
+            </ul>
+            <div
+              class="Entry__credits"
+            >
+              Photo by: 
+              <a
+                href="mailto:Lorem"
               >
-                <animate
-                  attributeName="offset"
-                  dur="2s"
-                  keyTimes="0; 0.25; 1"
-                  repeatCount="indefinite"
-                  values="-2; -2; 1"
-                />
-              </stop>
-              <stop
-                offset="50%"
-                stop-color="#e0e0e0"
-                stop-opacity="1"
+                ipsum
+              </a>
+            </div>
+            <div
+              class="Entry__details"
+            >
+              <div
+                class="Entry__date"
               >
-                <animate
-                  attributeName="offset"
-                  dur="2s"
-                  keyTimes="0; 0.25; 1"
-                  repeatCount="indefinite"
-                  values="-1; -1; 2"
-                />
-              </stop>
-              <stop
-                offset="100%"
-                stop-color="#f0f0f0"
-                stop-opacity="1"
+                Published: 28th December 2019 at 01:14
+              </div>
+              <div
+                class="Entry__author"
               >
-                <animate
-                  attributeName="offset"
-                  dur="2s"
-                  keyTimes="0; 0.25; 1"
-                  repeatCount="indefinite"
-                  values="0; 0; 3"
-                />
-              </stop>
-            </lineargradient>
-          </defs>
-        </svg>
-      </div>
+                <a
+                  href="https://www.flickr.com/photos/id1"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Author's page
+                </a>
+              </div>
+              <div
+                class="Entry__link"
+              >
+                <a
+                  href="#"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  View on flickr
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </li>
     </ul>
   </div>
 </DocumentFragment>
