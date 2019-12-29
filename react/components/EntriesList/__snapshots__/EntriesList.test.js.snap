@@ -9,7 +9,7 @@ exports[`EntriesList Renders 1`] = `
       class="sc-bdVaJa dabJse"
     >
       <div
-        class="sc-bwzfXH bvKcmb"
+        class="sc-bwzfXH bRNfHf"
       >
         <div
           class="EntriesCategoryInfo"
@@ -40,7 +40,7 @@ exports[`EntriesList Renders 1`] = `
       class="sc-bxivhb khxFsg"
     >
       <li
-        class="sc-EHOje kZZGZj"
+        class="sc-EHOje iNElue"
       >
         <article
           class="Entry__container"

@@ -2,20 +2,22 @@ import { combineEpics, createEpicMiddleware } from "redux-observable";
 import { applyMiddleware, createStore, combineReducers } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import entriesReducer, { epics as entriesEpics } from "./entries";
+import entriesReducer, { epic as entriesEpic } from "./entries";
 
-const rootReducer = combineReducers({
+const epicMiddleware = createEpicMiddleware();
+const epics = [entriesEpic];
+
+const reducers = {
   entries: entriesReducer
-});
+};
+const middlewares = [epicMiddleware];
 
-export function configureStore() {
-  const rootEpic = combineEpics(entriesEpics.entriesEpic);
-
-  const epicMiddleware = createEpicMiddleware();
+export function configureStore(enhancers = []) {
+  const rootEpic = combineEpics(...epics);
 
   const store = createStore(
-    rootReducer,
-    composeWithDevTools(applyMiddleware(epicMiddleware))
+    combineReducers(reducers),
+    composeWithDevTools(...[applyMiddleware(...middlewares), ...enhancers])
   );
 
   epicMiddleware.run(rootEpic);

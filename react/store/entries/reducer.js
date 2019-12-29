@@ -1,7 +1,7 @@
 import typeToReducer from "type-to-reducer";
 import * as types from "./types";
 
-const initialState = {
+export const initialState = {
   categoryName: null,
   categoryLink: null,
   categoryDate: null,

@@ -3,13 +3,13 @@
 exports[`Header Renders 1`] = `
 <DocumentFragment>
   <header
-    class="sc-EHOje gzhQJG"
+    class="sc-EHOje iOeApy"
   >
     <div
-      class="sc-bdVaJa jLEixs"
+      class="sc-bdVaJa dgpabP"
     >
       <a
-        class="sc-bwzfXH cbtDgI"
+        class="sc-bwzfXH fwsfYo"
         href="/"
       >
         <h1>
@@ -17,10 +17,10 @@ exports[`Header Renders 1`] = `
         </h1>
       </a>
       <div
-        class="sc-htpNat dHwdXQ"
+        class="sc-htpNat bOYgPy"
       >
         <input
-          class="sc-bxivhb llzmIy"
+          class="sc-bxivhb fFdMlD"
           placeholder="Filter feed..."
           type="text"
           value=""
